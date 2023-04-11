@@ -168,20 +168,20 @@ async function run() {
             res.json({ clientSecret: paymentIntent.client_secret })
         })
         //update orders by id
-        app.put('/order/:id',async(req,res)=>{
-            
-            const query={_id:ObjectId(id)};
-            const payment=req.body;
-            const doc={
-                $set:{
-                    payment:payment
+        app.put('/order/:id', async (req, res) => {
+
+            const query = { _id: ObjectId(id) };
+            const payment = req.body;
+            const doc = {
+                $set: {
+                    payment: payment
                 }
-                
+
             }
-            const result=await ordersCollection.updateOne(query,doc);
+            const result = await ordersCollection.updateOne(query, doc);
             res.send(result)
         }
-         
+
 
         )
     } finally {
