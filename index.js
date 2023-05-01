@@ -10,7 +10,7 @@ const stripe = require('stripe')(process.env.SECRET_KEY)
 
 //connect mongodb
 const { MongoClient } = require('mongodb');
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ppycm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = `${process.env.DB_USER}`;
 console.log(uri);
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
